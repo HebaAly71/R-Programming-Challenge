@@ -6,22 +6,21 @@ lm(formula = mpg ~ `vehicle length` + `vehicle weight` + `spoiler angle` +
 MPG Regression
 Residuals:
      Min       1Q   Median       3Q      Max 
--19.4701  -4.4994  -0.0692   5.4433  18.5849 
+-21.3395  -4.1155  -0.2094   6.8789  17.2672 
 
 Coefficients:
                      Estimate Std. Error t value Pr(>|t|)    
-(Intercept)        -1.040e+02  1.585e+01  -6.559 5.08e-08 ***
-`vehicle length`    6.267e+00  6.553e-01   9.563 2.60e-12 ***
-`vehicle weight`    1.245e-03  6.890e-04   1.807   0.0776 .  
-`spoiler angle`     6.877e-02  6.653e-02   1.034   0.3069    
-`ground clearance`  3.546e+00  5.412e-01   6.551 5.21e-08 ***
-AWD                -3.411e+00  2.535e+00  -1.346   0.1852    
+(Intercept)        -1.076e+02  1.576e+01  -6.823 1.87e-08 ***
+`vehicle length`    6.240e+00  6.609e-01   9.441 3.05e-12 ***
+`vehicle weight`    1.277e-03  6.948e-04   1.837   0.0728 .  
+`spoiler angle`     8.031e-02  6.656e-02   1.207   0.2339    
+`ground clearance`  3.659e+00  5.394e-01   6.784 2.13e-08 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 8.774 on 44 degrees of freedom
-Multiple R-squared:  0.7149,	Adjusted R-squared:  0.6825 
-F-statistic: 22.07 on 5 and 44 DF,  p-value: 5.35e-11
+Residual standard error: 8.853 on 45 degrees of freedom
+Multiple R-squared:  0.7032,	Adjusted R-squared:  0.6768 
+F-statistic: 26.65 on 4 and 45 DF,  p-value: 2.277e-11
 
 Analysis:
 Looking at the results of the multiple regression analysis conducted the following is concluded:
@@ -29,7 +28,7 @@ Looking at the results of the multiple regression analysis conducted the followi
 
 2) Since the p-value for this multiple regression model is significantly lower than the signifcance level, 0.05, therefore there is sufficient evidence to reject the null hypothesis which states that the slope of the regression model is 0.  This means that there is a linear correlation between the mpg and the other variables.
 
-3) Since the R squared value is 0.7149, this indicates that this model can effectively predict mpg of MechaCars in the future. The r-squared value of 0.715 indicates that 71% of the time the future data will fit to this linear regression model which is considered a high likelehood probability, and therefore it is a strong regression model.
+3) Since the R squared value is 0.7032, this indicates that this model can effectively predict mpg of MechaCars in the future. The r-squared value of 0.70 indicates that 70% of the time the future data will fit to this linear regression model which is considered a high likelehood probability, and therefore it is a strong regression model.
 
 2) Suspension Coil Summary:
 
@@ -53,5 +52,25 @@ mean of x
   
 Since the p-value is 0.76 which is significantly higher than the 0.05 signifcance level, there isn't enough evidence to reject the null hypothesis and therefore the means of the sample and the PSI coil population is similar. Also the mean of the sample PSI data is 1498.42 which is almost similar to the mean of the PSI population found in the summary table above which is 1498.78.
 
+Statistical Study Design:
 
+This is a design study that compares the MechaCar prototype to other competitor vehicles. There are many metrics that consumers can look at when buying a car like cost, fuel efficiency, gear options, color options, engine horsepower etc.. This study will focus on two main metrics that are vital to most of the consumers: 
+1) Cost: Price of the car.
+2) Fuel Efficiency: The average miles per gallon in the highway and city.
+
+
+For the purposes of this study, the questions that we need to answer here is:
+How does the cost of MechaCar compare to other competitor vehicles? Is the average cost significantly different from the cost of competitor vehichles? Is MechaCar average miles per gallon (fuel efficiency) lower or higher than competitor vehicles?
+
+Before answering these questions we need to first choose which competitor verhicles do we need to compare with MechaCar.  It will be necessary to choose competitor vehicles that are in the same vehicle class as the MechCar vehicles. For example we shouldn't compare MechaCar truck with a sportive car or a sportive car with a regular sedan MechaCar.  They should be from the same class.
+
+We will use one way ANOVA test to compare cost between different competitorsn and to see if there is a significant difference in cost between MechaCar and other competitors. Th dependent variable will be the cost, while the independent variable will be the different cars (i.e. MechCar, Toyota, Honda, etc.).
+In this case the  null hypothesis is there is no significant difference in average cost between the different vehicles, while the alternative is there is a significant difference.
+
+We can also use ANOVA test to know if MechaCar average miles per gallon is significantly different from competitor vehicles. In this case the null hypothesis is there is no significant difference in average miles per gallon between the different vehicles, while the alternative is there is a significant difference.
+
+We can also choose 3 of MechaCar top competitors and conduct a two way t-test to compare the MechaCar average cost with one of these competitors. In this case we will conduct 3 two test where the null hypothesis state that there is no siignificant difference between the two sample average costs, while the alternative hypothesis is that there is a significant diference in average costs. We can also do the same thing but this time to compare average miles per gallon.
+Please note that in order to conduct the above statistical tests we have to make sure that the data we have is normally distributed. 
+
+In order to conduct such a study we will need to collect data about other car competitors that were chosen for the study as well as MechaCar.  This data will be the miles per gallon for competitors cars (this can be taken for the past year and the input should be from different consumers).  The cost of competitors cars (this can be taken for the past year, we can try to find cost data from inputs of consumers stating the price they bought it at). Also we need to collect data about the MechaCar miles per gallon for different prototypes(we already have this data here but we might need to collect more data), also collect MechaCar cost data for different prototypes.  
 

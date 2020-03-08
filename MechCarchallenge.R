@@ -3,7 +3,7 @@ library(tidyverse)
 # Read the mpg data
 MechaCarMPG <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors = F)
 #generate multiple linear regression model+summary statistics
-summary(lm(mpg ~ `vehicle length` + `vehicle weight` + `spoiler angle` + `ground clearance`+ AWD,data=MechaCarMPG)) #generate summary statistics
+summary(lm(mpg ~ `vehicle length` + `vehicle weight` + `spoiler angle` + `ground clearance`,data=MechaCarMPG)) #generate summary statistics
 
 # Suspencion Coil Summary
 library(tidyverse)
